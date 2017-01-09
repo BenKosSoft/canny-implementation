@@ -20,8 +20,8 @@ if(strcmp(type,'Sobel'))
     if nargin ~= 1
         if ~mod(kernel_size,2); kernel_size=kernel_size+1;end;
         for i=3:2:kernel_size-2
-            sobel_kernel_x = conv2([1 2 1]' * [1 2 1], sobel_kernel_x);
-            sobel_kernel_y = conv2([1 2 1]' * [1 2 1], sobel_kernel_y);
+            sobel_kernel_x = 1/8 .* conv2([1 2 1]' * [1 2 1], sobel_kernel_x);
+            sobel_kernel_y = 1/8 .* conv2([1 2 1]' * [1 2 1], sobel_kernel_y);
         end
     end
     kernel_x = sobel_kernel_x;

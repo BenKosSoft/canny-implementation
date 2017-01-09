@@ -11,16 +11,16 @@ figure; imshow(img); title('Original Image');
 [imgNew] = prepare_image(img);
 
 tic
-canny = edge(imgNew, 'Canny', [0.085 0.170]);
+canny = edge(imgNew, 'Canny');
 figure; imshow(canny); title('MATLAB canny');
 toc
 
 gauss_kernel_size = 2;
 gauss_kernel = 1/273.*[1 4 7 4 1; 4 16 26 16 4; 7 26 41 26 7; 4 16 26 16 4; 1 4 7 4 1];
 
-kernel_size = 1;
+kernel_size = 7;
 type = 'Sobel';
-[kernel_x, kernel_y] = return_derivation_kernel(type);
+[kernel_x, kernel_y] = return_derivation_kernel(type, kernel_size);
 
 %{
   conv2 is far better than my convolution function in terms of speed 
@@ -61,10 +61,8 @@ toc
 
 tic
 %hythresis thresholding
-%change the threshold value to see different result
-%TODO: otsu method should be applied to determine threshold
-low_threshold = 0.085;
-high_threshold = 0.170;
+%OTSU
+[low_threshold, high_threshold] = otsu_thresholding(imgXY);
 result_img = h_thresholding(thinner_imgXY, low_threshold, high_threshold);
 figure; imshow(result_img); title('Final Image'); 
 toc
