@@ -1,5 +1,6 @@
 %{
-    this function is created by mertkosan and mbenlioglu at 10.01.2017
+owner: mertkosan (Mert Kosan), mbenlioglu(Muhammed Mucahid Benlioglu)
+created date: 09.01.2017
 
     Modified OTSU algorithm by mbenlioglu and mertkosan
 %}
