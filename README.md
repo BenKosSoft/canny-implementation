@@ -43,6 +43,7 @@ For further information refer to [final report of the project](/docs/report/Fina
 the repository or from the MATLAB library.
  
 * Input image is can be changed by modifying the 9<sup>th</sup> line of the _"thecleverguy.m"_ which is the following:
- ```matlab
+ 
+ ```javascript
  img = imread('images\Taryn Harbridge.png');
  ```
