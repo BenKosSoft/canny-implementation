@@ -1,29 +1,35 @@
-# README #
+# Canny Edge Detector Implementation
 
-This README would normally document whatever steps are necessary to get your application up and running.
+MATLAB implementation for Canny edge detector, including example input and outputs
 
-### What is this repository for? ###
+**Implemented by:**
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* @mbenlioglu
+* @mertkosan
 
-### How do I get set up? ###
+## About
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+This project covers a custom implementation of John F. Canny's edge detection algorithm and some experimental improvements explained in the articles of [Zhou et al (2011)](/docs/articles/An_Improved_Canny_Algorithm_for_Edge_Detection.pdf) and [Tao and Yue-hong (2015)](/docs/articles/Improvement_and_Implementation_for_Canny_Edge_Detection.pdf). The implementation includes:
 
-### Contribution guidelines ###
+* **Pre-processing**
+    Gray-scale conversion and double precision to improve image's reliability
+    
+* **Smoothing**
+    Eliminating possible noise using a smoothing kernel (Gaussian kernel in this case)
 
-* Writing tests
-* Code review
-* Other guidelines
+* **Derivation**
+    Edge detection step along x & y axes.
 
-### Who do I talk to? ###
+* **Non-max Suppression**
+    First signature step of Canny's algorithm, which makes the detected edge length to 1 pixel.
 
-* Repo owner or admin
-* Other community or team contact
+* **Hysteresis Thresholding**
+	Second signature step of Canny's algorithm, which keeps the weak edges if they're neighbouring strong edges and eliminate otherwise.
+
+In addition classical methods of implementing these steps, there is also other ways of thresholding (such as otsu thresholding) is tried to obtain different results for comparison.
+
+##### _System architecture followed for the project:_
+
+![System Architecture Img](/docs/img/SysArch.png)
+
+For further information refer to [final report of the project](/docs/report/FinalReport.pdf)
