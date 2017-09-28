@@ -28,8 +28,16 @@ This project covers a custom implementation of John F. Canny's edge detection al
 
 In addition classical methods of implementing these steps, there is also other ways of thresholding (such as otsu thresholding) is tried to obtain different results for comparison.
 
-##### _System architecture followed for the project:_
-
+#### _System architecture followed for the project:_
 ![System Architecture Img](/docs/img/SysArch.png)
 
 For further information refer to [final report of the project](/docs/report/FinalReport.pdf)
+
+## Getting Started
+
+* The entry-point of the project is the file _"thecleverguy.m"_. Running this file should automatically use needed scripts from the repository or from the MATLAB library.
+ 
+* Input image is can be changed by modifying the 9<sup>th</sup> line of the _"thecleverguy.m"_ which is the following:
+ > ```matlab
+ > img = imread('images\Taryn Harbridge.png');
+ > ```
