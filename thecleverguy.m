@@ -2,16 +2,16 @@
 owner: mertkosan (Mert Kosan), mbenlioglu(Muhammed Mucahid Benlioglu)
 created date: 09.01.2017
 
-Canny the Clever Guy implementation
+Canny Edge Detector implementation
 %}
 close all; clear all; clc;
 
-img = imread('Mert.jpg');
+img = imread('images\Taryn Harbridge.png');
 figure; imshow(img); title('Original Image');
 [imgNew] = prepare_image(img);
 
 tic
-canny = edge(imgNew, 'Canny');
+[canny, thresh] = edge(imgNew, 'Canny');
 figure; imshow(canny); title('MATLAB canny');
 toc
 
@@ -54,7 +54,7 @@ toc
 
 tic
 %nonmax supression
-thinner_imgXY = nonmax_supression(imgXY, normalized_angles);
+thinner_imgXY = nonmax_suppression(imgXY, normalized_angles);
 thinner_imgXY = thinner_imgXY.*imgXY;
 figure; imshow(thinner_imgXY); title('After nonmax supression'); 
 toc
@@ -67,6 +67,6 @@ result_img = h_thresholding(thinner_imgXY, low_threshold, high_threshold);
 figure; imshow(result_img); title('Final Image'); 
 toc
 
-%DONE CANNY (THE CLEVER GUY) IMPLEMENTATION
+%DONE CANNY EDGE DETECTOR IMPLEMENTATION
 %IT CAN BE IMPROVED BY CHANGING NON-MAX SUPRESSION 
-%AND HYTHRESIS THRESHOLDING ALGORITHM
+%AND HYTHRESIS THRESHOLDING ALGORITHM (OTSU THRESHOLDING)
