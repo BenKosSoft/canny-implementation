@@ -18,9 +18,9 @@ high_threshold = high_threshold * maxvalue_in_img;
 for i=1:1:r
    for j=1:1:c
       value = thinner_imgXY(i,j); 
-      if(value > high_threshold)
+      if(value >= high_threshold)
             result_img(i,j) = 1;
-      elseif(value < high_threshold && value > low_threshold)
+      elseif(value < high_threshold && value >= low_threshold)
           %look neighbours
           northwest = thinner_imgXY(i-1,j-1);
           west = thinner_imgXY(i,j-1); 
@@ -31,7 +31,7 @@ for i=1:1:r
           northeast = thinner_imgXY(i-1,j+1); 
           north = thinner_imgXY(i-1,j);
           maxValue = max([northwest, west, southwest, south, southeast, east, northeast, north]);
-          if(maxValue > high_threshold)
+          if(maxValue >= high_threshold)
               result_img(i,j) = 1;
           end
       end

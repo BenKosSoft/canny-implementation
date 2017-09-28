@@ -9,7 +9,7 @@ Canny Implementation
 takes input as normalized_angles which is result of normalize_directions.m
 function
 %}
-function [thinner_ImgXY] = nonmax_supression(ImgXY, normalized_angles)
+function [thinner_ImgXY] = nonmax_suppression(ImgXY, normalized_angles)
 
 [r,c] = size(ImgXY);
 thinner_ImgXY = zeros(r,c);
