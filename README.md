@@ -10,7 +10,7 @@ MATLAB implementation for Canny edge detector, including example input and outpu
 ## About
 
 This project covers a custom implementation of John F. Canny's edge detection algorithm and some experimental improvements
-explainedin the articles of [Zhou et al (2011)](/docs/articles/An_Improved_Canny_Algorithm_for_Edge_Detection.pdf) and
+explained in the articles of [Zhou et al (2011)](/docs/articles/An_Improved_Canny_Algorithm_for_Edge_Detection.pdf) and
 [Tao and Yue-hong (2015)](/docs/articles/Improvement_and_Implementation_for_Canny_Edge_Detection.pdf). The implementation includes:
 
 * **Pre-processing**
