@@ -12,19 +12,19 @@ This project covers a custom implementation of John F. Canny's edge detection al
 explained in the articles of [Zhou et al (2011)](/docs/articles/An_Improved_Canny_Algorithm_for_Edge_Detection.pdf) and
 [Tao and Yue-hong (2015)](/docs/articles/Improvement_and_Implementation_for_Canny_Edge_Detection.pdf). The implementation includes:
 
-* **Pre-processing **
+* **Pre-processing**
     Gray-scale conversion and double precision to improve image's reliability
     
-* **Smoothing **
+* **Smoothing**
     Eliminating possible noise using a smoothing kernel (Gaussian kernel in this case)
 
-* **Derivation **
+* **Derivation**
     Edge detection step along x & y axes.
 
-* **Non-max Suppression **
+* **Non-max Suppression**
     First signature step of Canny's algorithm, which makes the detected edge length to 1 pixel.
 
-* **Hysteresis Thresholding **
+* **Hysteresis Thresholding**
 	Second signature step of Canny's algorithm, which keeps the weak edges if they're neighbouring strong edges and eliminate
 	otherwise.
 
